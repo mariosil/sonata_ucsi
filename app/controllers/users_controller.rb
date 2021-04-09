@@ -2,6 +2,8 @@
 
 # Handles users related actions
 class UsersController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_user, only: %i[show edit update destroy]
   skip_before_action :require_login, only: %i[new create]
 

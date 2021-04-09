@@ -20,8 +20,10 @@
 </div>
 <div class="field">
   <strong> Dealership </strong>
-  <%= @car.dealership.name %>
+  <%= link_to @car.dealership.name, dealership_path(@car.dealership)%>
 </div>
 
-<%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>
+<% if current_user&.is_admin? %>
+ | <%= link_to 'Edit', edit_car_path(@car) %>
+<% end %>
