@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe "dealersheps/index", type: :view do
+RSpec.describe "dealerships/index", type: :view do
   before(:each) do
-    assign(:dealersheps, [
-      Dealershep.create!(
+    assign(:dealerships, [
+      Dealership.create!(
         name: "Name"
       ),
-      Dealershep.create!(
+      Dealership.create!(
         name: "Name"
       )
     ])
   end
 
-  it "renders a list of dealersheps" do
+  it "renders a list of dealerships" do
     render
     assert_select "tr>td", text: "Name".to_s, count: 2
   end

@@ -1,10 +1,10 @@
-<%= form_with(model: dealershep, local: true) do |form| %>
-  <% if dealershep.errors.any? %>
+<%= form_with(model: dealership, local: true) do |form| %>
+  <% if dealership.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dealershep.errors.count, "error") %> prohibited this dealershep from being saved:</h2>
+      <h2><%= pluralize(dealership.errors.count, "error") %> prohibited this dealership from being saved:</h2>
 
       <ul>
-      <% dealershep.errors.full_messages.each do |message| %>
+      <% dealership.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

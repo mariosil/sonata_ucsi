@@ -1,0 +1,42 @@
+<%= form_with(model: car, local: true) do |form| %>
+  <% if car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+      <ul>
+      <% car.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field :company %>
+  </div>
+  <div class="field">
+    <%= form.label :model %>
+    <%= form.text_field :model %>
+  </div>
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+  <div class="field">
+    <%= form.label 'Is New?' %>
+    <%= form.check_box :is_new %>
+  </div>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, value: number_to_currency(car.price)%>
+  </div>
+  <div class="field">
+    <%= form.label :dealership_id %>
+    <%= form.collection_select :dealership_id, Dealership.order(:name),:id,:name, include_blank: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

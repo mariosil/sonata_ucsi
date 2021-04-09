@@ -1,0 +1,27 @@
+<div class="field">
+  <strong> Company </strong>
+  <%= @car.company %>
+</div>
+<div class="field">
+  <strong> Model </strong>
+  <%= @car.model %>
+</div>
+<div class="field">
+  <strong> Year </strong>
+  <%= @car.year %>
+</div>
+<div class="field">
+  <strong> Is New? </strong>
+  <%= @car.is_new %>
+</div>
+<div class="field">
+  <strong> Price </strong>
+  <%= number_to_currency(@car.price) %>
+</div>
+<div class="field">
+  <strong> Dealership </strong>
+  <%= @car.dealership.name %>
+</div>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

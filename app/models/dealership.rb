@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Models dealershep table
+# Models dealership table
 class Dealership < ApplicationRecord
-
+  has_many :cars
 end

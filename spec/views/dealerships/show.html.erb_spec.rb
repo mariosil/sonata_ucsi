@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "dealersheps/show", type: :view do
+RSpec.describe "dealerships/show", type: :view do
   before(:each) do
-    @dealershep = assign(:dealershep, Dealershep.create!(
+    @dealership = assign(:dealership, Dealership.create!(
       name: "Name"
     ))
   end
