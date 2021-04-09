@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <div id="nav">
+    <div id="nav" style="background: lightgray">
       <% if current_user %>
+        <small style="color: red"><%= current_user.is_admin? ? 'Admin' : '' %></small>
+        <i><%= current_user.email %> - </i>
         <%= link_to 'Profile', edit_user_path(current_user) %>
         <%= link_to 'Logout', :logout, method: :post %>
       <% else %>
