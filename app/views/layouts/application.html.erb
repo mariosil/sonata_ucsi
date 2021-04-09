@@ -16,10 +16,12 @@
         <i><%= current_user.email %> - </i>
         <%= link_to 'Profile', edit_user_path(current_user) %>
         <%= link_to 'Logout', :logout, method: :post %>
+        <%= link_to 'Users', users_path if current_user.is_admin? %>
       <% else %>
         <%= link_to 'Register', new_user_path %>
         <%= link_to 'Login', :login %>
       <% end %>
+      <%= link_to 'Home', root_path %>
     </div>
     <div id="flashes">
       <p id='notice'><%= flash[:notice] %></p>
